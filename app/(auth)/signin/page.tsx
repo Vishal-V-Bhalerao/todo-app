@@ -1,5 +1,6 @@
-const SignIn = () => {
-    return <div><span>Sign in</span></div>
-}
+import AuthForm from "../../../components/Authform";
 
-export default SignIn
+
+export default function Register() {
+  return <AuthForm mode="signin" />;
+}
