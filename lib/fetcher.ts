@@ -12,7 +12,7 @@ export const fetcher = async ({url, method, body, isJson = true}: fetchParams) =
             Accept: 'application/json',
             'Content-Type':'Application/json'
         },
-        ...(body && {body}),
+        ...(body && {body: JSON.stringify(body)}),
     })
     if(!response.ok){
         throw new Error('API fetch error')
