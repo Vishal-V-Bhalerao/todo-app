@@ -12,8 +12,10 @@ export default async function signIn(request: NextApiRequest, response: NextApiR
                 email: userInfo?.email
             }
         })
+        console.log('user data API', userDbData)
         if(userDbData){
             const isUser = await passwordCompare(userInfo?.password, userDbData?.password)
+            
             const token = await createJWT(userInfo)
             if(isUser && process.env.JWT_COOKIE_NAME){
                     response.setHeader('Set-Cookie', serialize(process.env.JWT_COOKIE_NAME || '', token, {

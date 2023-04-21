@@ -7,10 +7,14 @@ import { ReactElement } from "react";
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ['latin']
+  subsets: ["latin"],
 });
 
-export default function DashboardRootLayout({ children }: { children: ReactElement}) {
+export default function DashboardRootLayout({
+  children,
+}: {
+  children: ReactElement;
+}) {
   return (
     <html lang="en" className={clsx(inter.variable, "dark")}>
       <head />
